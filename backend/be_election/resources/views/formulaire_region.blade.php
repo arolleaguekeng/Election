@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/app.css">
+    <title>Ajouter region</title>
+    <style>
 body{
     background-color: whitesmoke;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -110,3 +119,18 @@ input[type="submit"]:hover{
     font-weight: 500;
     font-size: 15px;
 }
+    </style>
+</head>
+<body>
+
+<div class="container" id="container">
+<form method="POST" action="{{route('add')}}">
+            @csrf
+            <h1>Ajouter Une Region</h1>
+            <input type="text" name="nom" id="nom" placeholder="Entrer le nom">
+            <input type="text" name="description" id="prix" placeholder="Entrer la Description">
+            <input  type="submit" value="Enregistrer" class="Enregistrer">
+        </form>
+    </div>
+</body>
+</html>

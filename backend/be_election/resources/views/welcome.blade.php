@@ -1,132 +1,404 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <style>
+    button{
+        border-radius: 5px;
+        height: 80px;
+        margin-top: 15px;
+        padding-left: 10px;
+        border: 0.2px solid rgb(165, 165, 165);
+        width: 250px;
+        border: 2px solid rgb(4, 47, 126);
+        background-color: white;
+        color: rgb(4, 47, 126);
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 25px;
+}
 
-        <title>Laravel</title>
+.header{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    height:90vh;
+}
 
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+.header .left{
+    width:40%
+}
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--tw-bg-opacity: 1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gray-100{--tw-bg-opacity: 1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.border-gray-200{--tw-border-opacity: 1;border-color:rgb(229 231 235 / var(--tw-border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.text-center{text-align:center}.text-gray-200{--tw-text-opacity: 1;color:rgb(229 231 235 / var(--tw-text-opacity))}.text-gray-300{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity: 1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity: 1;color:rgb(17 24 39 / var(--tw-text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--tw-bg-opacity: 1;background-color:rgb(31 41 55 / var(--tw-bg-opacity))}.dark\:bg-gray-900{--tw-bg-opacity: 1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:border-gray-700{--tw-border-opacity: 1;border-color:rgb(55 65 81 / var(--tw-border-opacity))}.dark\:text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}}
-        </style>
+.header .right{
+    width:55%
+}
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+.header .right svg{
+    width:100%;
+}
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+h1{
+    font-size:45px;
+    font-familly:Arial;
+}
+button:hover{
+    background-color: rgb(4, 47, 126);
+    color: white;
+    cursor:pointer;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../.css">
+</head>
+<body>
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
+<div class="header">
+    <div class="left">
+    <h1>Application d' élections</h1>
+    <a href="/region/create">
+        <button>Creer Une Region</button>
+    </a> 
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
+    <a href="/region_liste">
+        <button>lister Les Region</button>
+    </a> 
+    </div>
+    <div class="right">
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
+<svg id="a8b740ca-1e51-43ca-93d8-3818c8833a7c" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="865.76" height="682.89" viewBox="0 0 865.76 682.89">
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
+<defs>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
+<style xmlns="http://www.w3.org/1999/xhtml">*, ::after, ::before { box-sizing: border-box; }
+img, svg { vertical-align: middle; }
+</style>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
+<style xmlns="http://www.w3.org/1999/xhtml">*, body, html { -webkit-font-smoothing: antialiased; }
+img, svg { max-width: 100%; }
+</style>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
+</defs>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
+<path d="M451.6,603.51l1-14.66,8,4.83,7.5-2.83,14.42,10.86a1,1,0,0,1,.4.8h0a1,1,0,0,1-1,1H460.34l-1.7-4.47a.2.2,0,0,0-.37,0l-1.18,4.46Z" fill="#ef573d" data-primary="true"/>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<path d="M169.71,608.45,224,609.56a18.82,18.82,0,0,0-13.78-11.74c-.44-.09-.88-.15-1.31-.2-2.21-.28-10.57-1.75-14.84-8.27L182.6,599.67,172.6,589h-2.89Z" fill="#ef573d" data-primary="true"/>
 
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                            </svg>
+<path d="M773,601.67V589h14.88l14.24,11.28a.77.77,0,0,1-.48,1.38Z" fill="#ef573d" data-primary="true"/>
 
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
+<polygon points="696.83 580.8 696.83 589.24 708.16 597.23 711.27 587.46 711.27 581.69 696.83 580.8" fill="#f9b499"/>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                            </svg>
+<path d="M773,582.69v5l3.33,8s1.55,2.88,3.77,0l7.78-6.67v-6.44Z" fill="#f9b499"/>
 
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
+<path d="M383.47,587.77s-11.1,13.9-6,18.57c0,0,3.11,6.44,12,0l4.88-3.78a79.8,79.8,0,0,0-.79-14.59l-6,4.32Z" fill="#ef573d" data-primary="true"/>
 
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
+<path d="M388.72,592l4.26-3.11a1.47,1.47,0,0,0,.58-1l1.9-12.72h-12v12.52a1.49,1.49,0,0,0,.4,1l2.94,3.1A1.46,1.46,0,0,0,388.72,592Z" fill="#f9b499"/>
+
+<path d="M452.6,578.69v10.16a82.38,82.38,0,0,1,8,4.83s6.5-2.83,7.5-2.83V578Z" fill="#f9b499"/>
+
+<polygon points="123.41 547.07 117.64 551.71 113.42 567.03 128.3 571.47 133.41 565.03 123.41 547.07" fill="#f9b499"/>
+
+<polygon points="172.6 582.57 172.6 589.01 182.6 599.67 194.09 589.35 194.09 582.57 172.6 582.57" fill="#f9b499"/>
+
+<rect x="25.44" y="70.12" width="814.88" height="445.65" rx="51.24" fill="#ccc"/>
+
+<rect x="35.56" y="83.61" width="786.89" height="418.66" rx="39.15" fill="#f1f2f2"/>
+
+<rect x="178.22" y="334.44" width="152.73" height="98.28" fill="#ccc"/>
+
+<rect x="178.22" y="334.44" width="7.84" height="98.28" opacity="0.2"/>
+
+<ellipse cx="225.42" cy="379.88" rx="26.63" ry="30.22" fill="#f1f2f2"/>
+
+<path d="M250.58,379.88l-25.16-1.45L212.82,356S245.25,340.26,250.58,379.88Z" opacity="0.2"/>
+
+<rect x="268" y="362.69" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<rect x="268" y="376.68" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<rect x="268" y="389.26" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<rect x="190.08" y="221.9" width="152.73" height="95.83" fill="#ccc"/>
+
+<rect x="190.08" y="221.9" width="5.63" height="95.83" opacity="0.2"/>
+
+<ellipse cx="235.72" cy="267.35" rx="26.63" ry="30.22" fill="#f1f2f2"/>
+
+<rect x="279.85" y="250.15" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<rect x="279.85" y="264.14" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<rect x="279.85" y="276.73" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<path d="M211.36,268.25h48s-.66,24.7-22,27C237.35,295.28,215,297.52,211.36,268.25Z" opacity="0.2"/>
+
+<path d="M235.72,266.57V240s-21-2.17-24.36,26.48Z" opacity="0.2"/>
+
+<rect x="180.59" y="117.79" width="150.36" height="87.81" fill="#ccc"/>
+
+<rect x="180.59" y="117.79" width="5.63" height="87.81" opacity="0.2"/>
+
+<ellipse cx="225.45" cy="164.02" rx="26.63" ry="30.22" fill="#f1f2f2"/>
+
+<path d="M249.34,164c0,10.33-5.09,19.31-12.59,23.89l-.53.31a21.43,21.43,0,0,1-21.53,0l-.54-.31c-7.49-4.58-12.58-13.56-12.58-23.89,0-15,10.69-27.11,23.88-27.11S249.34,149.05,249.34,164Z" opacity="0.2"/>
+
+<rect x="270.36" y="146.04" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<rect x="270.36" y="160.03" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<rect x="270.36" y="172.62" width="50.41" height="8.22" rx="4.11" opacity="0.2"/>
+
+<path d="M236.22,188.22a21.43,21.43,0,0,1-21.53,0L225.45,164Z" fill="#f1f2f2"/>
+
+<rect x="366.76" y="89.08" width="200.88" height="349.29" fill="#ccc"/>
+
+<rect x="382.75" y="107.81" width="161.15" height="209.92" fill="#f1f2f2"/>
+
+<rect x="396.99" y="183.69" width="15.74" height="121.26" fill="#ccc"/>
+
+<rect x="455.9" y="212.77" width="15.74" height="92.17" fill="#ccc"/>
+
+<rect x="425.92" y="150.15" width="15.74" height="154.79" fill="#ccc"/>
+
+<rect x="485.89" y="170.36" width="15.74" height="134.58" fill="#ccc"/>
+
+<rect x="515.65" y="231.66" width="15.74" height="73.29" fill="#ccc"/>
+
+<rect x="455.9" y="201.01" width="7.87" height="3.66" rx="1.83" fill="#ccc"/>
+
+<rect x="455.9" y="194.85" width="17.13" height="3.66" rx="1.83" fill="#ccc"/>
+
+<rect x="426.01" y="132.46" width="7.87" height="3.66" rx="1.83" fill="#ccc"/>
+
+<rect x="426.01" y="126.3" width="17.13" height="3.66" rx="1.83" fill="#ccc"/>
+
+<rect x="485.19" y="158.09" width="7.87" height="3.66" rx="1.83" fill="#ccc"/>
+
+<rect x="485.19" y="151.93" width="17.13" height="3.66" rx="1.83" fill="#ccc"/>
+
+<rect x="514.17" y="218.94" width="7.87" height="3.66" rx="1.83" fill="#ccc"/>
+
+<rect x="514.17" y="212.77" width="17.13" height="3.66" rx="1.83" fill="#ccc"/>
+
+<rect x="587.13" y="133.79" width="151.24" height="283.2" fill="#ccc"/>
+
+<rect x="733.7" y="134.02" width="4.66" height="282.98" opacity="0.2"/>
+
+<rect x="597.46" y="149.71" width="127.25" height="99.94" fill="#f1f2f2"/>
+
+<path d="M603.45,244.32V199.68s22-.41,33.21,10.71a26.94,26.94,0,0,0,10.07,6.47,26.37,26.37,0,0,0,19.35-.53S702.39,200,720.38,222v22.32Z" fill="#ccc"/>
+
+<rect x="619.8" y="165.77" width="0.78" height="33.91" fill="#ccc"/>
+
+<rect x="623.59" y="169.3" width="7.58" height="0.78" fill="#ccc"/>
+
+<rect x="623.59" y="172.96" width="7.58" height="0.78" fill="#ccc"/>
+
+<rect x="655.2" y="180.93" width="0.78" height="33.91" fill="#ccc"/>
+
+<rect x="658.99" y="186.79" width="7.58" height="0.78" fill="#ccc"/>
+
+<rect x="658.99" y="190.45" width="7.58" height="0.78" fill="#ccc"/>
+
+<rect x="692.32" y="173.35" width="0.78" height="33.91" fill="#ccc"/>
+
+<rect x="696.1" y="173.77" width="7.58" height="0.78" fill="#ccc"/>
+
+<rect x="696.1" y="177.43" width="7.58" height="0.78" fill="#ccc"/>
+
+<ellipse cx="680.65" cy="273.96" rx="12.74" ry="14.66" fill="#f1f2f2"/>
+
+<path d="M692.09,274a13.87,13.87,0,0,1-4.38,10.34,10.42,10.42,0,0,1-7.05,2.82c-6.32,0-11.45-5.9-11.45-13.16s5.13-13.16,11.45-13.16c6.06,0,11,5.43,11.4,12.3C692.08,273.39,692.09,273.68,692.09,274Z" opacity="0.2"/>
+
+<path d="M692.09,274a13.87,13.87,0,0,1-4.38,10.34L680.66,274l11.4-.86C692.08,273.39,692.09,273.68,692.09,274Z" fill="#f1f2f2"/>
+
+<ellipse cx="610.2" cy="273.11" rx="12.74" ry="14.66" fill="#f1f2f2"/>
+
+<path d="M621.64,273.11a13.89,13.89,0,0,1-4.38,10.35,10.46,10.46,0,0,1-7.06,2.81,10.59,10.59,0,0,1-7.68-3.4,14.13,14.13,0,0,1-3.76-9.76c0-7.27,5.13-13.16,11.44-13.16,5.74,0,10.5,4.87,11.31,11.22,0,.35.07.72.1,1.09S621.64,272.82,621.64,273.11Z" opacity="0.2"/>
+
+<ellipse cx="645.01" cy="273.11" rx="12.74" ry="14.66" fill="#f1f2f2"/>
+
+<path d="M656.45,273.11a13.91,13.91,0,0,1-4.37,10.35,10.48,10.48,0,0,1-7.06,2.81,10.59,10.59,0,0,1-7.68-3.4,14.09,14.09,0,0,1-3.76-9.76c0-7.27,5.12-13.16,11.44-13.16,6.06,0,11,5.44,11.4,12.31A8,8,0,0,1,656.45,273.11Z" opacity="0.2"/>
+
+<path d="M645,260v13.82l-7.68,9.1a14.09,14.09,0,0,1-3.76-9.76C633.58,265.84,638.7,260,645,260Z" fill="#f1f2f2"/>
+
+<path d="M621.64,273.11a13.89,13.89,0,0,1-4.38,10.35l-7.58-10.35,11.83-1.94c0,.35.07.72.1,1.09S621.64,272.82,621.64,273.11Z" fill="#f1f2f2"/>
+
+<rect x="595.05" y="350.63" width="68.26" height="54.22" fill="#f1f2f2"/>
+
+<polygon points="660.06 400.49 598.33 400.49 598.33 358.19 599.11 358.19 599.11 399.71 660.06 399.71 660.06 400.49" fill="#ccc"/>
+
+<path d="M602,387v10H659.2V366.18s-9-.59-22.19,11.17a50.24,50.24,0,0,1-7.92,5.84c-4.26,2.49-9.61,4.7-11.8,1.79,0,0-5.66-5.49-12.7-2.1A4.62,4.62,0,0,0,602,387Z" fill="#ccc"/>
+
+<path d="M602,387v10H659.2V366.18s-9-.59-22.19,11.17a50.24,50.24,0,0,1-7.92,5.84c-4.26,2.49-9.61,4.7-11.8,1.79,0,0-5.66-5.49-12.7-2.1A4.62,4.62,0,0,0,602,387Z" opacity="0.2"/>
+
+<rect x="601.96" y="359.58" width="27.43" height="1.64" rx="0.82" fill="#ccc"/>
+
+<rect x="601.96" y="363.66" width="27.43" height="1.64" rx="0.82" fill="#ccc"/>
+
+<rect x="601.96" y="366.96" width="18.67" height="1.64" rx="0.82" fill="#ccc"/>
+
+<path d="M35.8,461.95H822.7a0,0,0,0,1,0,0v0a40.32,40.32,0,0,1-40.32,40.32H76.13A40.32,40.32,0,0,1,35.8,461.95v0a0,0,0,0,1,0,0Z" fill="#ccc"/>
+
+<path d="M35.8,461.87H822.7a0,0,0,0,1,0,0v0a40.32,40.32,0,0,1-40.32,40.32H76.13A40.32,40.32,0,0,1,35.8,461.87v0A0,0,0,0,1,35.8,461.87Z" opacity="0.2"/>
+
+<path d="M105.26,438.51l27.86.84-2,29.25H91.46a7.63,7.63,0,0,1-6.32-3.29c-11.08-16.11-11.08-59.4-11.08-59.4C72.39,359.39,113,354.65,113,354.65l25.17,5.71s19.5-3.48,35.38,49.73L198,385.2l19.22,20.44L212,413.05a77.82,77.82,0,0,1-15.13,15.89L161,458.76l-55.74-20.25" fill="#ef573d" data-primary="true"/>
+
+<path d="M160.28,450.49l-9.81-84.7s14.38,11.81,23.05,44.3L198,385.2l19.22,20.44S208.34,420.9,195.6,430L161,458.76Z" fill="#231f20" opacity="0.2"/>
+
+<path d="M120.53,544.66,133.12,567s68-48.09,82.9-79.4c0,0,6.26-11.16-.18-19H180.27S158.28,501.27,120.53,544.66Z" fill="#0f2463" data-secondary="true"/>
+
+<path d="M120.53,544.66,133.12,567s67.66-47.49,82.54-78.58c0,0,6.93-11.38.18-19.85h-35S158.28,501.58,120.53,544.66Z" opacity="0.2"/>
+
+<path d="M98.76,560.59,126.08,607s5.15-2.23,3.37-15a34.55,34.55,0,0,0-2.22-8.09c-1.16-2.88-2.4-8.07,1.07-12.44L113.42,567l4.22-15.33S109.87,552.82,98.76,560.59Z" fill="#ef573d" data-primary="true"/>
+
+<path d="M443.87,277.76l9.78-10.54s1.75-1.67,3.1-.67c0,0,4.77,6.77,10.22.5a27.29,27.29,0,0,1,1.94,4.94,16.44,16.44,0,0,0-1.83-11.7,9.54,9.54,0,0,0-9.06-4.77h-.1a27,27,0,0,1-4.58.16c-4.29-.24-13.12.81-20.46,11.69,0,0-33.35,48.78-47.15,86.93a7.88,7.88,0,0,0,7.12,10.55l36.26,1.29s28.42-45.93,34.17-73.21" fill="#0f2463" data-secondary="true"/>
+
+<path d="M524.6,303.34l-.88-2-35.84,14.69-16.83,54.24a.33.33,0,0,0,.32.42l2.2,0" fill="#e6e7e8"/>
+
+<path d="M424.49,366s-12.81,6.94-20.36,68.23L381,577.69s11.33,2.89,16.43,0c0,0,42.2-135.47,46.2-158.12l3.55,1.33s-.44,72.4,3.11,114.15v44.3H469s16.26-146.47,3.8-193.66L471,356.94Z" fill="#0f2463" data-secondary="true"/>
+
+<path d="M424.49,366s-12.81,6.94-20.36,68.23L381,577.69s11.33,2.89,16.43,0c0,0,42.2-135.47,46.2-158.12l3.55,1.33s-.44,72.4,3.11,114.15v44.3H469s16.26-146.47,3.8-193.66L471,356.94Z" fill="#231f20" opacity="0.2"/>
+
+<path d="M504.34,309.3a90,90,0,0,0,1.88-10.54,3.16,3.16,0,0,1,2.32-2.92c.92-.22,1.95,0,2.81,1.52,0,0,3.42-5.31,5.14,2.56a8.52,8.52,0,0,1,0,4.4l-4.79,2s.52-5.26-.06-6.93l-3.08-.08s.47,7.39-.05,8.31Z" fill="#f9b499"/>
+
+<path d="M703.27,362.5s-15.32,21.18-17,86.94c0,0-2,95.27,3.67,133.91h32l-4.91-150a2.78,2.78,0,0,1,2.78-2.87h0a2.76,2.76,0,0,1,2.68,2.05L763.9,584.68h32.31s-40.53-202.76-55.41-222Z" fill="#0f2463" data-secondary="true"/>
+
+<path d="M683.14,600.35l13.69-11.11,14.44-1.78s2.44,8,1.33,14.21h-29A.74.74,0,0,1,683.14,600.35Z" fill="#ef573d" data-primary="true"/>
+
+<g opacity="0.2">
+
+<path d="M696.44,567.48,694.22,436c-1.32-41.37,13.68-73.33,13.83-73.65l.7.34C708.6,363,693.68,394.82,695,436l2.22,131.48Z"/>
+
+</g>
+
+<g opacity="0.2">
+
+<rect x="688.24" y="567.08" width="33.17" height="0.78"/>
+
+</g>
+
+<g opacity="0.2">
+
+<rect x="755.74" y="360.3" width="0.78" height="205.99" transform="translate(-81.46 172.07) rotate(-12.32)"/>
+
+</g>
+
+<g opacity="0.2">
+
+<rect x="758.25" y="563.53" width="33.73" height="0.78"/>
+
+</g>
+
+<path d="M758.93,352.73S751,368.86,747.6,372c0,0-7,9.54-5.15,17.78,0,0,2.57,0,4.38-6.7l.77,19.08s3.09-1,2.43-9.8l2.43,10.13a.41.41,0,0,0,.78.05,24.42,24.42,0,0,0,1.58-8.12s.69,3.64,2.64,5.38a.62.62,0,0,0,1-.64c-1.05-3.27-3.32-11.44-2.33-17.88,0,0,11.42-12.12,14.28-19.69Z" fill="#f9b499"/>
+
+<path d="M651.71,329.84,670.4,354.5l7.55-14L661,324.23l-1.3-1.25a8.8,8.8,0,0,0-4.9-5.9s-8.25-11.12-7.73-6.48l3.6,6.48S640.12,326.14,651.71,329.84Z" fill="#f9b499"/>
+
+<circle cx="707.89" cy="286" r="4.4" fill="#ef573d" data-primary="true"/>
+
+<ellipse cx="731.93" cy="281.6" rx="4.74" ry="3.7" transform="translate(122.09 774.67) rotate(-60)" fill="#f9b499"/>
+
+<polygon points="132.84 374.71 133.96 361.89 138.14 372.48 140.92 359.39 133.96 350.47 115.57 346.01 112.97 356.32 132.84 374.71" fill="#ef573d" data-primary="true"/>
+
+<polygon points="132.84 374.71 133.96 361.89 138.14 372.48 140.92 359.39 133.96 350.47 115.57 346.01 112.97 356.32 132.84 374.71" fill="#231f20" opacity="0.2"/>
+
+<path d="M140.64,310.07c3.88-3.34,5.08-5.34,5.44-6.35a1.5,1.5,0,0,0-.26-1.55c-1.4-1.47-5.18.8-5.18.8,4.84-6.72,1.73-8.19-1.11-8.39a10.29,10.29,0,0,0-4.55.77l-22,8.87c-5.1,3.07,0,7,0,7l-2.27,18.65s-1,8.65,6.82,5Z" fill="#0f2463" data-secondary="true"/>
+
+<polyline points="132.68 441.58 170.28 450.27 166.1 462 131.61 462" fill="#f9b499"/>
+
+<path d="M107.11,375,153,446.16c-7.2-1.43-14.7-3.11-22.44-5.07-9.67-2.45-18.8-5.1-27.35-7.86C104.62,426.46,105.82,419,107.11,375Z" fill="#231f20" opacity="0.2"/>
+
+<path d="M89.16,475.33a37.26,37.26,0,0,0,3.56,9.29,27.84,27.84,0,0,0,8.53,9.65,45.11,45.11,0,0,0,26,8h36.85s3.78-.09,4,5l2.67,75.28h24L206,485.75s1-12.92-5.64-17.14H101.76a45.89,45.89,0,0,1-4.69-.24l-9.87-1Z" fill="#0f2463" data-secondary="true"/>
+
+<polygon points="131.61 462 166.1 462 181.6 417.26 254.81 418.78 238.29 468.61 131.17 468.6 131.61 462" fill="#d1d3d4"/>
+
+<polygon points="131.61 462 166.1 462 163.13 468.61 131.17 468.6 131.61 462" opacity="0.2"/>
+
+<circle cx="210.71" cy="443.9" r="6.66" opacity="0.2"/>
+
+<path d="M199.46,386.68s10.46-8.6,16.94-19.6l12.7-18.62s3.66-3.1,2.82,1.69l-4.8,11.57s3.58-.64,3.25,2.69c0,0,3.67,0,3.5,3.16,0,0,4.16.17,2.83,3l-20.93,33.49S202.59,390,199.46,386.68Z" fill="#f9b499"/>
+
+<path d="M442,297.36,420.78,313c-6.83,4.83-5.33,16.82-5.33,16.82s5.67,41.81,20.49,55.3l11.66-26s16.66-9.83,25.15-17.91c0,0,5.33-8.91,11-11.41l.67-1.66s-22-19.32-28.82-24Z" fill="#ef573d" data-primary="true"/>
+
+<ellipse cx="443.87" cy="280.52" rx="3.37" ry="5.36" transform="translate(-79.3 235.8) rotate(-27.41)" fill="#f9b499"/>
+
+<path d="M442,285.53v13a3.36,3.36,0,0,0,.91,2.31c2.22,2.38,8.08,8.2,12.58,8.43A1.31,1.31,0,0,0,456.8,308l.63-14L447.1,282.37,442,283.54Z" fill="#f9b499"/>
+
+<ellipse cx="456.75" cy="277.76" rx="17.63" ry="12.87" transform="translate(144.06 711.34) rotate(-85.51)" fill="#f9b499"/>
+
+<path d="M445.07,277.76s9.25-12.46,11.64-10.42c.51,1,5.63,7.08,10.24-.21l2.22,4.14s1-2.9-3.07-11.6c0,0-1.59-5.64-9.25-3.42,0,0-12.77-.85-16.18,3.76L422.41,283.9l13.14-2s2.23-5.4,5.3-6.43C440.85,275.42,443.54,273.49,445.07,277.76Z" fill="#0f2463" data-secondary="true"/>
+
+<path d="M470.87,340.48c-1.76-10.12-13.44-35.1-13.44-35.1,5.18,3.77,26.52,22.4,26.52,22.4l-.85,2.38s-4.49,1.74-10.35,11.09L471,342.66h0A11.38,11.38,0,0,0,470.87,340.48Z" opacity="0.2"/>
+
+<path d="M447.64,359.13S433,331,430.35,318.75l31,31.35c-2.18,1.6-4.45,3.27-6.94,4.89C452.07,356.49,449.82,357.86,447.64,359.13Z" opacity="0.2"/>
+
+<ellipse cx="513.68" cy="383.58" rx="29.45" ry="33.42" fill="#f1f2f2"/>
+
+<path d="M538.68,383.44a32.1,32.1,0,0,1-1.46,9.61l-.09.28a28,28,0,0,1-8.22,12.58,22,22,0,0,1-14.41,5.5,22.61,22.61,0,0,1-17.19-8.29,30.23,30.23,0,0,1-7-19.68c0-15.44,10.83-28,24.19-28S538.68,368,538.68,383.44Z" opacity="0.2"/>
+
+<path d="M537.22,393.05l-.09.28a28,28,0,0,1-8.22,12.58,22,22,0,0,1-14.41,5.5,22.61,22.61,0,0,1-17.19-8.29l16.37-19.55Z" fill="#f1f2f2"/>
+
+<path d="M524.6,303.34l-.88-2-35.84,14.69-16.83,54.24a.33.33,0,0,0,.32.42l2.2,0" opacity="0.2"/>
+
+<path d="M472.8,370l16.44-52.65,34.44-14.42a.7.7,0,0,1,.93.85L509.3,353.43a.58.58,0,0,1-.29.34l-35.44,16.9A.56.56,0,0,1,472.8,370Z" fill="#e6e7e8"/>
+
+<path d="M443.15,383.62A366,366,0,0,0,473.2,358a50.54,50.54,0,0,1,7-5.62c3.1-2.08,7.44-5.31,10.07-8.61a.92.92,0,0,0-.87-1.48c-.91.16-2.43.93-5,3.09l7.25-6.57a1.09,1.09,0,0,0-.17-1.74h0a1.09,1.09,0,0,0-1.27.11l-6.31,5.4,6.34-6.28a1.44,1.44,0,0,0-.34-2.3h0l-7.17,6.41,7.14-6.63a1.46,1.46,0,0,0,0-2.1h0a1.45,1.45,0,0,0-1.95-.09l-8.22,6.74s2-2.37,1.08-6.68c0,0-3.58,2.51-8.08,9.59a210.93,210.93,0,0,1-25.15,17.91l-11.66,26s.77,1,3.43.34A10.21,10.21,0,0,0,443.15,383.62Z" fill="#f9b499"/>
+
+<path d="M678,340.5l-7.55,14s15.77,25.09,23.32,18.65c0,0,3.33-1.11,6-14l1.55,3.33,39.53.22s8.66-6.66,7.11-28l15.32,8.88-5.33,10.86,17.33,11.8,9.1-21.1s1.78-4-2.89-8.66c0,0-26.09-32.8-53.91-37.17l-18.39,4.73s-15.2-3.32-17,11.12l-8,31.09Z" fill="#ef573d" data-primary="true"/>
+
+<g opacity="0.2">
+
+<path d="M784.26,345.55c-37.22-7.31-35.35-37.32-35.33-37.62l.77.06a34,34,0,0,0,3.5,15.69c3.7,7.56,12.11,17.36,31.21,21.11Z"/>
+
+</g>
+
+<g opacity="0.2">
+
+<path d="M777.88,359.89c-13-9.41-5.94-33.2-5.86-33.44l.74.23c-.07.23-6.93,23.5,5.58,32.58Z"/>
+
+</g>
+
+<g opacity="0.2">
+
+<path d="M717.3,355.23a4.93,4.93,0,0,1-.75-.06,5.29,5.29,0,0,1-3.6-2.36c-2.94-4.51-2.37-10.11.06-15.9-2.68-2.92-6.48-6.77-11.81-11.67l.53-.57c5.19,4.77,8.94,8.56,11.62,11.46,6.89-15.41,26.34-31.91,27.48-32.86l.5.59c-.28.24-20.54,17.41-27.36,32.94,1.39,1.53,2.47,2.79,3.28,3.79a23.71,23.71,0,0,1,3.29,5.24c1.75,3.93,1.62,6.74-.37,8.38A4.5,4.5,0,0,1,717.3,355.23Zm-3.66-17.64c-2.24,5.45-2.74,10.65,0,14.8a4.49,4.49,0,0,0,3.07,2,3.77,3.77,0,0,0,3-.79c1.7-1.39,1.75-3.9.16-7.46a22.53,22.53,0,0,0-3.18-5.07C715.89,340.14,714.9,339,713.64,337.59Z"/>
+
+</g>
+
+<g opacity="0.2">
+
+<path d="M677.05,363.75l-.41-.66c.17-.11,17.22-11.21,22-58.16l.77.08C694.59,352.41,677.76,363.31,677.05,363.75Z"/>
+
+</g>
+
+<g opacity="0.2">
+
+<path d="M695.73,370.49c-8.72-21.76-24.39-16.9-24.55-16.84l-.24-.74c.16-.06,16.52-5.14,25.51,17.29Z"/>
+
+</g>
+
+<path d="M710.82,286.76l-1.1,12.09c-.22,2.45-.5,4.89-.88,7.31-.74,4.72-1.49,14.63,6.42,9.47,0,0,5.83-5.05,11.13-15a10,10,0,0,0,1.16-4.36l.49-14.7Z" fill="#f9b499"/>
+
+<path d="M140.7,310.86a29.75,29.75,0,0,1,3.73,15c0,10.36-4.49,19-10.47,21.11v14.92L115.57,346l2-11.14-.45-.12a2.42,2.42,0,0,1-.85.16c-1.74,0-3.16-1.8-3.16-4s1.42-4,3.16-4a2.64,2.64,0,0,1,1.55.53l.11-.05c0-.49,0-1,0-1.48,0-11.94,6-21.62,13.3-21.62,3.53,0,6.72,2.24,9.1,5.87Z" fill="#f9b499"/>
+
+<path d="M117.77,327.39s5.8-22,22.61-17l1.13-5.5-4.18-4.61-11.57,1.93-8,6.75Z" fill="#0f2463" data-secondary="true"/>
+
+<path d="M457.37,295.28l-.09,2.08s-7.56-.17-9.45-6.28C447.83,291.08,450.35,295.44,457.37,295.28Z" fill="#f7a48b"/>
+
+<path d="M710.46,290.71l.28-3.07,10.52,1.16S718.1,292.34,710.46,290.71Z" fill="#f7a48b"/>
+
+<ellipse cx="718.65" cy="274.38" rx="16.1" ry="12.82" transform="translate(152.9 795.6) rotate(-63.55)" fill="#f9b499"/>
+
+<path d="M721.27,263.22a16.37,16.37,0,0,1-6.74,1.63,4.82,4.82,0,0,1-3.8-7.59c1.67-2.4,4.27-4.77,8-4.44a47.71,47.71,0,0,0,7.07.24c4.5-.26,11.08-.25,13.48,1.72,0,0,2.53-13.1,10-10.44s7.5,12.66,7.5,12.66,0,7.26-12,7.85c0,0-.43,20.83-12.87,21.15l-.4-9.6S724.61,279,721.27,263.22Z" fill="#0f2463" data-secondary="true"/>
+
+<circle cx="728.34" cy="287.64" r="4.72" fill="#ef573d" data-primary="true"/>
+
+<path d="M134,347v3.5a19.13,19.13,0,0,1-8.86-6S131.73,348.1,134,347Z" fill="#f7a48b"/>
+
+</svg>
+    </div>
+</div>
+</body>
 </html>
