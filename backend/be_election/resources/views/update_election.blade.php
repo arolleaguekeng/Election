@@ -50,7 +50,7 @@
     </style>
 <body>
 
-    <b><h1 class="title">Update region</h1></b>
+    <b><h1 class="title">Update Election</h1></b>
 
     <div>
       <form method="POST" action="{{route('add')}}">
@@ -58,6 +58,16 @@
         <input type="hidden" value="{{$reg->id}}">
         <b><label for="label">Label</label></b>
         <input type="text" id="label" name="label" required value="{{$reg->label}}">
+
+
+        <input type="text" name="label" id="nom" placeholder="Entrer le nom">
+            <input type="date" name="date" id="date" placeholder="Choisir unr date">
+            <input type="text" name="description" id="prix" placeholder="Entrer la Description">
+            <select name="status" id="">
+                <option  value="en cours">En cours</option>
+                <option value="terminé">Terminé</option>
+                <option value="annulé">Annulé</option>
+            </select>
 
         <b><input type="submit" value="Ajouter"></b>
       </form>

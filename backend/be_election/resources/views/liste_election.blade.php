@@ -87,7 +87,7 @@ button:hover{
 
 <body>
     <div class="container">
-    <h1>Liste des regions</h1>
+    <h1>Liste des Elections</h1>
         <div class="actions">
         <button class="btn-new" onclick="openForm('form')">New</button>
         <button class="btn-print">Print</button>
@@ -111,12 +111,12 @@ button:hover{
                     <div class="btn">
                         <div>
                             <span class="btn-delete">
-                                <a href="/region_delete/{{$r->id}}">Del</a>
+                                <a href="/election_delete/{{$r->id}}">Del</a>
                             </span>
                         </div>
                         <div>
                             <span class="btn-edit">
-                                <a href="/form_update_region/{{$r->id}}">Edit</a>
+                                <a href="/form_update_election/{{$r->id}}">Edit</a>
                             </span>
                         </div>
                     </div>

@@ -25,12 +25,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Election extends Model
 {
-	protected $table = 'elections';
+	protected $table = 'election';
 	public $timestamps = false;
 
 	protected $casts = [
 		'Date' => 'datetime',
-		'id_votes' => 'int'
 	];
 
 	protected $fillable = [
@@ -38,11 +37,10 @@ class Election extends Model
 		'Label',
 		'Description',
 		'Status',
-		'id_votes'
 	];
 
-	public function vote()
-	{
-		return $this->belongsTo(Vote::class, 'id_votes');
-	}
+	// public function vote()
+	// {
+	// 	return $this->belongsTo(Vote::class, 'id_votes');
+	// }
 }

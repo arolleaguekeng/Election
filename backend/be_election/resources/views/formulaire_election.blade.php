@@ -84,7 +84,7 @@ form{
     width: 350px;
 }
 
-input{
+input, select{
     border-radius: 5px;
     height: 30px;
     margin-top: 15px;
@@ -122,13 +122,18 @@ input[type="submit"]:hover{
     </style>
 </head>
 <body>
-
 <div class="container" id="container">
 <form method="POST" action="{{route('add')}}">
             @csrf
             <h1>Ajouter Une Election</h1>
-            <input type="text" name="nom" id="nom" placeholder="Entrer le nom">
+            <input type="text" name="label" id="nom" placeholder="Entrer le nom">
+            <input type="date" name="date" id="date" placeholder="Choisir unr date">
             <input type="text" name="description" id="prix" placeholder="Entrer la Description">
+            <select name="status" id="">
+                <option  value="en cours">En cours</option>
+                <option value="terminé">Terminé</option>
+                <option value="annulé">Annulé</option>
+            </select>
             <input  type="submit" value="Enregistrer" class="Enregistrer">
         </form>
     </div>

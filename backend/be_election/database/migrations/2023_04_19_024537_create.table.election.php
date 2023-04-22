@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamp('date');
             $table->string('label');
-            $table->string('designation');
+            $table->string('description');
             $table->string('status');
         });
     }

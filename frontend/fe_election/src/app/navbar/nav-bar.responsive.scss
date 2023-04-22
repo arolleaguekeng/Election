@@ -1,0 +1,155 @@
+
+@media (max-width: 952px) {
+    .logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    button {
+        border-color: white;
+        color: antiquewhite;
+    }
+
+
+}
+
+@media (max-width: 952px) {
+    .checkbtn {
+        display: block;
+        position: fixed;
+        bottom: 2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+
+    }
+
+
+    ul {
+        position: fixed !important;
+        width: 100%;
+        height: 60px;
+        left: -100%;
+        bottom: 0;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        color: antiquewhite;
+        background-color: #0082e6;
+        transition: 1s cubic-bezier(.5, 0, 0, 1);
+        opacity: 1;
+        margin: 0;
+        z-index: 1;
+        padding: 0;
+    }
+    nav ul li a label{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    
+    nav ul li a label svg{
+        margin-bottom: -33px;
+        width: 30px;
+        display: block;
+    }
+
+    .logo {
+        font-size: 25px;
+        padding-left: 20px;
+    }
+
+    nav {
+        padding: 0;
+        width: 100%;
+    }
+    nav ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        margin: 0;
+        text-transform:capitalize;
+    }
+
+    nav ul li a::after{
+        content: "test";
+    }
+
+    .img-logo {
+        width: 32;
+    }
+
+    a:hover,
+    a.active {
+        background-color: none;
+        color: #0082e6;
+    }
+
+    #check:checked~ul {
+        left: 0;
+
+    }
+
+    nav ul li a:checked~ul {
+        left: 0;
+    }
+
+}
+
+.menu-icon {
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    background-color: #0082e6;
+    display: flex;
+    border: 2px solid white;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 50%;
+}
+
+
+button {
+    border: .5px solid #0f2463;
+    background-color: transparent;
+    padding: none;
+    height: 40px;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: all .4s ease-in-out;
+}
+
+button:hover {
+    border: none;
+    background-color: #0f2463;
+    transition: all .4s ease-in-out;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 1024;
+        margin: 0;
+        padding: 0;
+    }
+
+
+}

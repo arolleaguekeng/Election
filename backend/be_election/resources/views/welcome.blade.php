@@ -46,6 +46,10 @@ button:hover{
     color: white;
     cursor:pointer;
 }
+.menu{
+    display:flex;
+    flex-direction:column;
+}
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,13 +62,27 @@ button:hover{
 <div class="header">
     <div class="left">
     <h1>Application d' élections</h1>
-    <a href="/region/create">
-        <button>Creer Une Region</button>
-    </a> 
+    <div class="menu">
+        <div class="mn-election">
+            <a href="/region/create">
+                <button>Creer Une Region</button>
+            </a> 
 
-    <a href="/region_liste">
-        <button>lister Les Region</button>
-    </a> 
+            <a href="/region_liste">
+                <button>lister Les Region</button>
+            </a> 
+        </div>
+
+        <div class="mn-election">
+            <a href="/election/create">
+                <button>Creer Une Election</button>
+            </a> 
+
+            <a href="/election_liste">
+                <button>lister Les Elections</button>
+            </a> 
+        </div>
+    </div>
     </div>
     <div class="right">
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
